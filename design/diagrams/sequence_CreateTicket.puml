@@ -1,0 +1,14 @@
+@startuml createTicket
+actor Client
+participant KioskUI
+participant TicketService
+participant QueueManager
+participant DB
+
+
+Client -> KioskUI: select service + client type
+KioskUI -> TicketService: createTicket()
+TicketService -> QueueManager: assignPriority()
+QueueManager -> DB: save(ticket)
+TicketService -> KioskUI: return ticket info
+@enduml

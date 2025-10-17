@@ -1,0 +1,14 @@
+@startuml assignTicket
+actor Operator
+participant OperatorPanel
+participant OperatorService
+participant TicketService
+participant DB
+
+
+Operator -> OperatorPanel: request next ticket
+OperatorPanel -> OperatorService: fetchNextTicket()
+OperatorService -> TicketService: getNextFromQueue()
+TicketService -> DB: update(ticket.status = assigned)
+OperatorService -> OperatorPanel: display ticket
+@enduml

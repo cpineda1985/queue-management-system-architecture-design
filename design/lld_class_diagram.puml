@@ -1,0 +1,61 @@
+@startuml LLDServicesLayer
+
+skinparam classAttributeIconSize 0
+
+package "User Interfaces" {
+  class TicketKioskUI
+  class OperatorPanelUI
+  class AdminDashboard
+
+  TicketKioskUI --> TicketService : createTicket()
+  OperatorPanelUI --> OperatorService : fetchNextTicket()
+  OperatorPanelUI --> OperatorService : completeTicket()
+  AdminDashboard --> ReportService : generateReport()
+}
+
+package "Service Layer" {
+  class TicketService {
+    +createTicket()
+    +assignToQueue()
+    +markAsComplete()
+  }
+
+  class OperatorService {
+    +fetchNextTicket()
+    +logOperatorStatus()
+    +startTransaction()
+    +completeTransaction()
+  }
+
+  class ReportService {
+    +generateReportByDate()
+    +reportByOperator()
+    +reportByArea()
+  }
+}
+
+package "Persistence Layer" {
+  class TicketRepository {
+    +save()
+    +findNextByPriority()
+    +updateStatus()
+  }
+
+  class OperatorLogRepository {
+    +logStart()
+    +logEnd()
+  }
+
+  class ReportRepository {
+    +getTicketsByDateRange()
+    +getTransactionsByOperator()
+    +getSummaryByArea()
+  }
+}
+
+TicketService --> TicketRepository
+OperatorService --> TicketRepository
+OperatorService --> OperatorLogRepository
+ReportService --> ReportRepository
+
+@enduml

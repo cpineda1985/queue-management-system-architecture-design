@@ -1,0 +1,59 @@
+@startuml uml_data_model
+title Data Model for Queue Management System
+class Ticket {
+    +id: UUID
+    +type: String
+    +status: String
+    +priority: Int
+    +createdAt: DateTime
+    +areaId: UUID
+    +clientTypeId: UUID
+    +transactionTypeId: UUID
+}
+
+
+class Operator {
+    +id: UUID
+    +name: String
+    +state: String
+    +areaId: UUID
+}
+
+
+class Area {
+    +id: UUID
+    +name: String
+}
+
+
+class OperatorLog {
+    +id: UUID
+    +operatorId: UUID
+    +ticketId: UUID
+    +startTime: DateTime
+    +endTime: DateTime
+    +statusChange: String
+}
+
+
+class ClientType {
+    +id: UUID
+    +label: String
+    +priority: Int
+}
+
+
+class TransactionType {
+    +id: UUID
+    +name: String
+    +expectedDuration: Int
+}
+
+
+Ticket --> Area
+Ticket --> ClientType
+Ticket --> TransactionType
+Operator --> Area
+OperatorLog --> Operator
+OperatorLog --> Ticket
+@enduml

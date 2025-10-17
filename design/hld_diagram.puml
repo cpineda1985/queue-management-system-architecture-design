@@ -1,0 +1,19 @@
+@startuml HLD
+package "Client Interfaces" {
+    [Ticket Kiosk] --> [QMS Backend]
+    [Waiting Room Screen] --> [QMS Backend]
+    [Operator Panel] --> [QMS Backend]
+    [Admin Dashboard] --> [QMS Backend]
+}
+
+package "QMS Backend" {
+    [Ticket Service]
+    [Queue Manager]
+    [Operator Controller]
+    [Report Engine]
+    [WebSocket Notification]
+    [Configuration API]
+}
+
+[QMS Backend] --> [Database]
+@enduml

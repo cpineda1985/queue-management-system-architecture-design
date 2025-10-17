@@ -1,0 +1,13 @@
+@startuml activity_cliente_ticket
+start
+:Select Area/Service;
+:Select Client Type;
+:Create Ticket;
+if (Service Available?) then (Yes)
+    :Assign Priority;
+    :Add to Queue;
+else (No)
+    :Show Unavailable Message;
+endif
+stop
+@enduml

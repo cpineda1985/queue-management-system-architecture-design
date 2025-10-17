@@ -1,0 +1,35 @@
+# Ignore temporary files and system junk
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Ignore image export temp files (if any)
+*.svg
+*.bak
+*.plantuml.png
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS-specific files
+ehthumbs.db
+desktop.ini
+
+# Node-related (if you ever add live preview or tooling)
+node_modules/
+
+# PlantUML or CLI exports (optional)
+*.eps
+*.pdf
+
+# macOS tags
+.AppleDouble
+.LSOverride
+
+# VS Code backup
+*.code-workspace
+.history/

@@ -1,0 +1,14 @@
+@startuml completeTicket
+actor Operator
+participant OperatorPanel
+participant OperatorService
+participant OperatorLogService
+participant DB
+
+
+Operator -> OperatorPanel: complete ticket
+OperatorPanel -> OperatorService: completeTransaction(ticketId)
+OperatorService -> OperatorLogService: logEndTime()
+OperatorLogService -> DB: save(log)
+OperatorService -> DB: update(ticket.status = done)
+@enduml

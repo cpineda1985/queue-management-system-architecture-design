@@ -1,0 +1,26 @@
+@startuml DFD
+actor Client
+actor Operator
+actor Admin
+
+
+rectangle "Frontend UI" {
+    Client --> (Ticket Kiosk)
+    Operator --> (Operator Panel)
+    Admin --> (Admin Dashboard)
+}
+
+rectangle "Backend Services" {
+    (Ticket Kiosk) --> (Create Ticket)
+    (Operator Panel) --> (Fetch Next Ticket)
+    (Operator Panel) --> (Complete Ticket)
+    (Admin Dashboard) --> (Generate Report)
+}
+
+rectangle "Database" {
+    (Create Ticket) --> (Tickets)
+    (Complete Ticket) --> (OperatorLogs)
+    (Generate Report) --> (Tickets)
+    (Generate Report) --> (OperatorLogs)
+}
+@enduml

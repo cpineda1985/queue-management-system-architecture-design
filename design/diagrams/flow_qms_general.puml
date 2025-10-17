@@ -1,0 +1,15 @@
+@startuml flow_qms_general
+title General QMS Flowchart
+start
+:Client selects service at kiosk;
+:Ticket generated and added to queue;
+:Operator logs in and requests next ticket;
+:Ticket assigned to operator;
+:Operator serves the client;
+:Service completed and logged;
+if (Next ticket?) then (Yes)
+    -> [yes] back to :Operator logs in and requests next ticket;
+else
+    -> [no] stop
+endif
+@enduml
