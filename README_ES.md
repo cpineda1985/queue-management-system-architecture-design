@@ -91,6 +91,7 @@ Este repositorio está actualmente enfocado en el diseño y planificación. El d
 ## 📄 Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT. Ver archivo `LICENSE` para más detalles.
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ---
 
@@ -99,6 +100,7 @@ Este proyecto está licenciado bajo la Licencia MIT. Ver archivo `LICENSE` para 
 ¡Bienvenidas! Puedes hacer fork del proyecto y enviar pull requests. Para cambios mayores, por favor abre un issue primero para discutir la propuesta.
 
 ---
+
 
 ## 💡 Autor
 

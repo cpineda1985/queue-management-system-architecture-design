@@ -90,7 +90,7 @@ This repository currently focuses on design and planning. Development of a worki
 ## 📄 License
 
 This project is licensed under the MIT License. See `LICENSE` file for details.
-
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ---
 
 ## 🤝 Contributing
