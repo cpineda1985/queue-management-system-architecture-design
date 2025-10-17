@@ -99,6 +99,10 @@ We welcome contributions! Feel free to fork the project and submit pull requests
 
 ---
 
+![Status](https://img.shields.io/badge/status-design_complete-brightgreen)
+
+---
+
 ## 💡 Author
 
 César Pineda – [@cpineda1985](https://github.com/cpineda1985)
